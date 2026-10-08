@@ -1,0 +1,14 @@
+name: check reminders
+permissions:
+  issues: write
+  pull-requests: write
+on:
+  schedule:
+    - cron: '10 * * * *'
+  workflow_dispatch:
+jobs:
+  reminder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check reminders and notify
+        uses: agrc/reminder-action@v1
